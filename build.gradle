@@ -1,4 +1,5 @@
 plugins {
+    id 'java-library'
     id 'groovy'
     id 'maven-publish'
 }
@@ -13,11 +14,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'de.dfki.mary', name: 'marytts-runtime', version: maryttsVersion
-    testCompile group: 'org.testng', name: 'testng', version: '6.9.4'
-    testCompile group: 'xmlunit', name: 'xmlunit', version: '1.6'
-    testRuntime group: 'de.dfki.mary', name: 'voice-cmu-slt-hsmm', version: maryttsVersion
-    testRuntime group: 'de.dfki.mary', name: 'marytts-lang-de', version: maryttsVersion
+    api group: 'de.dfki.mary', name: 'marytts-runtime', version: maryttsVersion
+    testImplementation group: 'org.testng', name: 'testng', version: '6.9.4'
+    testImplementation group: 'xmlunit', name: 'xmlunit', version: '1.6'
+    testRuntimeOnly group: 'de.dfki.mary', name: 'voice-cmu-slt-hsmm', version: maryttsVersion
+    testRuntimeOnly group: 'de.dfki.mary', name: 'marytts-lang-de', version: maryttsVersion
 }
 
 test {
