@@ -13,24 +13,12 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.4'
     compile group: 'de.dfki.mary', name: 'marytts-runtime', version: maryttsVersion
     testCompile group: 'org.testng', name: 'testng', version: '6.9.4'
     testCompile group: 'xmlunit', name: 'xmlunit', version: '1.6'
     testRuntime group: 'de.dfki.mary', name: 'voice-cmu-slt-hsmm', version: maryttsVersion
     testRuntime group: 'de.dfki.mary', name: 'marytts-lang-de', version: maryttsVersion
 }
-
-
-configurations.all {
-    resolutionStrategy {
-        dependencySubstitution {
-            force 'org.codehaus.groovy:groovy-all:2.4.4'
-            substitute module('org.slf4j:slf4j-log4j12:1.6.1') with module('org.slf4j:log4j-over-slf4j:1.6.1')
-        }
-    }
-}
-
 
 test {
     useTestNG()
